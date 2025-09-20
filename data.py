@@ -59,3 +59,62 @@ STATUS_CODES = {
     "not_found": 404,
     "conflict": 409
 }
+
+# Тестовые данные для создания курьера
+COURIER_TEST_DATA = {
+    "valid": {
+        "login": "test_courier_login",
+        "password": "test_password_123",
+        "firstName": "ТестовыйКурьер"
+    },
+    "without_login": {
+        "password": "test_password_123",
+        "firstName": "ТестовыйКурьер"
+    },
+    "without_password": {
+        "login": "test_courier_login",
+        "firstName": "ТестовыйКурьер"
+    },
+    "without_first_name": {
+        "login": "test_courier_login",
+        "password": "test_password_123"
+    },
+    "duplicate": {
+        "login": "test_courier_login",
+        "password": "different_password",
+        "firstName": "ДругойКурьер"
+    }
+}
+
+# Данные для параметризации тестов без обязательных полей
+MISSING_FIELDS_TEST_DATA = [
+    ("login", {
+        "password": "test_password_123",
+        "firstName": "ТестовыйКурьер"
+    }),
+    ("password", {
+        "login": "test_courier_login",
+        "firstName": "ТестовыйКурьер"
+    })
+]
+
+#Тестовые данные для различных сценариев
+TEST_COURIER_CREATION = {
+    "valid_data": {
+        "login": "autotest_courier",
+        "password": "secure_password",
+        "firstName": "AutoTestCourier"
+    },
+    "missing_login": {
+        "password": "secure_password",
+        "firstName": "AutoTestCourier"
+    },
+    "missing_password": {
+        "login": "autotest_courier",
+        "firstName": "AutoTestCourier"
+    },
+    "minimal_data": {
+        "login": "minimal_courier",
+        "password": "minimal_pass"
+    }
+}
